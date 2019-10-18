@@ -26,7 +26,7 @@ func init() {
       <div class="gf-form">
       <span>You can enter multiple email addresses using a ";" separator</span>
       </div>
-    `,·
+    `,
 	})
 }
 
