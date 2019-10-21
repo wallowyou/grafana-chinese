@@ -46,10 +46,10 @@ If you're interested in contributing to the Grafana project:
 Grafana is distributed under [Apache 2.0 License](https://github.com/grafana/grafana/blob/master/LICENSE).
 ## Addition 关于汉化版
 如何启动？
-1. 安装好源码构建的环境, 文档见`/public/README.md`
+1. 安装好源码构建的环境, 文档见`doc-chinese`
 2. 构建后台
 3. 配置文件修改，配置修改在`custom.ini`文件
-4. 启动服务，将构建好的grafana-server.exe移出到bin文件夹然后启动，默认端口为8080
+4. 启动服务，将构建好的grafana-server.exe移出到bin文件夹然后启动，默认端口为8088
 5. 前端使用yarn start启动
-6. 输入`http://localhost:8080`
+6. 输入`http://localhost:8088`
 
