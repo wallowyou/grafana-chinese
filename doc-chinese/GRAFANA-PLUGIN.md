@@ -21,4 +21,5 @@ data-error | 用于处理仪表盘刷新时的错误
 此处举一个Echarts图表插件为例， 插件地址在[公司内部gitlab地址](http://rj.zzx1983.com:30166/zzx-web-group/react/zzx-echarts-panel.git)。
 插件开发必须包含的文件有：
 #### angular开发插件
+此处举一个使用angualr开发的列子
 
