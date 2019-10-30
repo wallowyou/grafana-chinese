@@ -55,8 +55,68 @@ export const getPanelMenu = (dashboard: DashboardModel, panel: PanelModel) => {
 
   const menu: PanelMenuItem[] = [];
 
+  // menu.push({
+  //   text: 'View',
+  //   iconClassName: 'gicon gicon-viewer',
+  //   onClick: onViewPanel,
+  //   shortcut: 'v',
+  // });
+
+  // if (dashboard.meta.canEdit) {
+  //   menu.push({
+  //     text: 'Edit',
+  //     iconClassName: 'gicon gicon-editor',
+  //     onClick: onEditPanel,
+  //     shortcut: 'e',
+  //   });
+  // }
+
+  // menu.push({
+  //   text: 'Share',
+  //   iconClassName: 'fa fa-fw fa-share',
+  //   onClick: onSharePanel,
+  //   shortcut: 'p s',
+  // });
+
+  // const subMenu: PanelMenuItem[] = [];
+
+  // if (!panel.fullscreen && dashboard.meta.canEdit) {
+  //   subMenu.push({
+  //     text: 'Duplicate',
+  //     onClick: onDuplicatePanel,
+  //     shortcut: 'p d',
+  //   });
+
+  //   subMenu.push({
+  //     text: 'Copy',
+  //     onClick: onCopyPanel,
+  //   });
+  // }
+
+  // subMenu.push({
+  //   text: 'Panel JSON',
+  //   onClick: onEditPanelJson,
+  // });
+
+  // menu.push({
+  //   type: 'submenu',
+  //   text: 'More...',
+  //   iconClassName: 'fa fa-fw fa-cube',
+  //   subMenu: subMenu,
+  // });
+
+  // if (dashboard.meta.canEdit) {
+  //   menu.push({ type: 'divider' });
+
+  //   menu.push({
+  //     text: 'Remove',
+  //     iconClassName: 'fa fa-fw fa-trash',
+  //     onClick: onRemovePanel,
+  //     shortcut: 'p r',
+  //   });
+  // }
   menu.push({
-    text: 'View',
+    text: '查看',
     iconClassName: 'gicon gicon-viewer',
     onClick: onViewPanel,
     shortcut: 'v',
@@ -64,7 +124,7 @@ export const getPanelMenu = (dashboard: DashboardModel, panel: PanelModel) => {
 
   if (dashboard.meta.canEdit) {
     menu.push({
-      text: 'Edit',
+      text: '编辑',
       iconClassName: 'gicon gicon-editor',
       onClick: onEditPanel,
       shortcut: 'e',
@@ -72,7 +132,7 @@ export const getPanelMenu = (dashboard: DashboardModel, panel: PanelModel) => {
   }
 
   menu.push({
-    text: 'Share',
+    text: '分享',
     iconClassName: 'fa fa-fw fa-share',
     onClick: onSharePanel,
     shortcut: 'p s',
@@ -82,25 +142,25 @@ export const getPanelMenu = (dashboard: DashboardModel, panel: PanelModel) => {
 
   if (!panel.fullscreen && dashboard.meta.canEdit) {
     subMenu.push({
-      text: 'Duplicate',
+      text: '重复',
       onClick: onDuplicatePanel,
       shortcut: 'p d',
     });
 
     subMenu.push({
-      text: 'Copy',
+      text: '复制',
       onClick: onCopyPanel,
     });
   }
 
   subMenu.push({
-    text: 'Panel JSON',
+    text: '面板 JSON',
     onClick: onEditPanelJson,
   });
 
   menu.push({
     type: 'submenu',
-    text: 'More...',
+    text: '更多...',
     iconClassName: 'fa fa-fw fa-cube',
     subMenu: subMenu,
   });
@@ -109,7 +169,7 @@ export const getPanelMenu = (dashboard: DashboardModel, panel: PanelModel) => {
     menu.push({ type: 'divider' });
 
     menu.push({
-      text: 'Remove',
+      text: '移除',
       iconClassName: 'fa fa-fw fa-trash',
       onClick: onRemovePanel,
       shortcut: 'p r',
