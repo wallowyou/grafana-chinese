@@ -20,6 +20,60 @@ data-error | 用于处理仪表盘刷新时的错误
 ##### React开发插件示例
 此处举一个Echarts图表插件为例， 插件地址在[公司内部gitlab地址](http://rj.zzx1983.com:30166/zzx-web-group/react/zzx-echarts-panel.git)。
 插件开发必须包含的文件有：
+1. `plugin.json`, 描述插件的问价
+```
+{
+  "type": "panel",
+  "name": "Echarts Panel",
+  "id": "zzx-echarts-panel",
+
+  "info": {
+    "description": "Zzx Echarts Panel",
+    "author": {
+      "name": "wallow"
+    },
+    "keywords": ["Echarts"],
+    "logos": {
+      "small": "img/logo_new.svg",
+      "large": "img/logo_new.svg"
+    },
+    "links": [
+      {"name": "Website", "url": "https://github.com/grafana/simple-react-panel"},
+      {"name": "License", "url": "https://github.com/grafana/simple-react-panel/blob/master/LICENSE"}
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "6.3.x",
+    "plugins": []
+  }
+}
+
+```
+2. `module.(t|j)s(?x)` ,例如：
+```
+import { PanelPlugin } from '@grafana/ui';
+import { SimpleOptions, defaults } from './types';
+import { SimplePanel } from './SimplePanel';
+import { SimpleEditor } from './SimpleEditor';
+
+export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setDefaults(defaults).setEditor(SimpleEditor);
+```
+3. 关于插件配置中会使用到的一些组件
++ PanelEditorProps
++ FormField
++ FormLabel
++ Select
++ Switch
++ PanelOptionsGrid
++ PanelOptionsGroup
++ ColorPicker
+其他所需要的组件需要的时候引入
+4. 关于图表接入数据
+可以使用`this.props.data`获取到需要的数据列`series`
 #### angular开发插件
-此处举一个使用angualr开发的列子
+*TODO*
 
