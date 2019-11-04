@@ -76,4 +76,13 @@ export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setDefaults(de
 可以使用`this.props.data`获取到需要的数据列`series`
 #### angular开发插件
 *TODO*
+## 一些插件
+### SVG插件
+我们在大屏展示的时候可能会用到svg图，grafana官方有一个插件SVG panel for grafana,需要我们手动安装或者直接下载包压缩包,[下载地址](https://codeload.github.com/MarcusCalidus/marcuscalidus-svg-panel/legacy.zip/56d2a0fb2b25f36bf55cfa24baae0fa8c5636dea)。
+插件提供的功能有：
+1. svg builder 就是可以通过操作自动生成svg。
+2. 可以手动输入svg data。
+3. 提供Event让你可以自定义编写js代码对svg进行操作
+4. 此插件集成了snap.js操作svg
 
+### 数字动画
