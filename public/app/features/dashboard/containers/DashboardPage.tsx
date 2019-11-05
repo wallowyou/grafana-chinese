@@ -269,6 +269,9 @@ export class DashboardPage extends PureComponent<Props, State> {
       'dashboard-container': true,
       'dashboard-container--has-submenu': dashboard.meta.submenuEnabled,
     });
+    const dashStyle = {
+      background: dashboard.background,
+    };
 
     // Only trigger render when the scroll has moved by 25
     const approximateScrollTop = Math.round(scrollTop / 25) * 25;
@@ -283,7 +286,7 @@ export class DashboardPage extends PureComponent<Props, State> {
           $injector={$injector}
           onAddPanel={this.onAddPanel}
         />
-        <div className="scroll-canvas scroll-canvas--dashboard">
+        <div className="scroll-canvas scroll-canvas--dashboard" style={dashStyle}>
           <CustomScrollbar
             autoHeightMin="100%"
             setScrollTop={this.setScrollTop}

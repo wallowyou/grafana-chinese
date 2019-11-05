@@ -12,15 +12,23 @@ export class GeneralTabCtrl {
   /** @ngInject */
   constructor($scope: any) {
     this.panelCtrl = $scope.ctrl;
-
     const updatePanel = () => {
       console.log('panel.render()');
       this.panelCtrl.panel.render();
     };
-
     const generateValueFromPanel = (scope: any) => {
       const { panel } = scope.ctrl;
-      const panelPropsToTrack = ['title', 'description', 'transparent', 'repeat', 'repeatDirection', 'minSpan'];
+      const panelPropsToTrack = [
+        'title',
+        'description',
+        'transparent',
+        'borderWidth',
+        'boderColor',
+        'borderRadius',
+        'repeat',
+        'repeatDirection',
+        'minSpan',
+      ];
       const panelPropsString = panelPropsToTrack
         .map(prop => prop + '=' + (panel[prop] && panel[prop].toString ? panel[prop].toString() : panel[prop]))
         .join();
@@ -28,8 +36,14 @@ export class GeneralTabCtrl {
       const panelLinksString = panelLinks.map(obj2string).join();
       return panelPropsString + panelLinksString;
     };
-
     $scope.$watch(generateValueFromPanel, updatePanel, true);
+    console.log(this.onColorChange);
+    this.onColorChange = this.onColorChange.bind(this);
+  }
+  onColorChange() {
+    return (newColor: string) => {
+      console.log(newColor);
+    };
   }
 }
 

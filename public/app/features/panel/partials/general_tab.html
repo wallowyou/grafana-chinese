@@ -30,6 +30,28 @@
          ></textarea>
       </div>
     </div>
+    <div class="section">
+      <div class="gf-form">
+        <span class="gf-form-label width-7">
+            面板边框大小
+          </span>
+        <input type="text" class="gf-form-input width-25" ng-model='ctrl.panel.borderWidth' ng-model-onblur></input>
+      </div>
+      <div class="gf-form">
+        <span class="gf-form-label width-7">
+              面板边框颜色
+        </span>
+        <span class="gf-form-label">
+            <color-picker color="ctrl.panel.borderColor" onChange="ctrl.onColorChange(color)"></color-picker>
+          </span>
+      </div>
+      <div class="gf-form">
+        <span class="gf-form-label width-7">
+              面板边框半径
+        </span>
+        <input type="text" class="gf-form-input width-25" ng-model='ctrl.panel.borderRadius' ng-model-onblur></input>
+      </div>
+    </div>
   </div>
 </div>
 

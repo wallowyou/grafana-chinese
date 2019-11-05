@@ -57,6 +57,7 @@ export class PanelCtrl {
     }
 
     $scope.$on('component-did-mount', () => this.panelDidMount());
+    // this.onColorChange = this.onColorChange.bind(this);
   }
 
   panelDidMount() {
@@ -128,7 +129,7 @@ export class PanelCtrl {
     //   icon: 'gicon gicon-viewer',
     //   shortcut: 'v',
     // });
-      menu.push({
+    menu.push({
       text: '查看',
       click: 'ctrl.viewPanel();',
       icon: 'gicon gicon-viewer',
@@ -206,42 +207,42 @@ export class PanelCtrl {
   getExtendedMenu() {
     const menu = [];
     if (!this.panel.fullscreen && this.dashboard.meta.canEdit) {
-    //   menu.push({
-    //     text: 'Duplicate',
-    //     click: 'ctrl.duplicate()',
-    //     role: 'Editor',
-    //     shortcut: 'p d',
-    //   });
+      //   menu.push({
+      //     text: 'Duplicate',
+      //     click: 'ctrl.duplicate()',
+      //     role: 'Editor',
+      //     shortcut: 'p d',
+      //   });
 
-    //   menu.push({
-    //     text: 'Copy',
-    //     click: 'ctrl.copyPanel()',
-    //     role: 'Editor',
-    //   });
-    // }
+      //   menu.push({
+      //     text: 'Copy',
+      //     click: 'ctrl.copyPanel()',
+      //     role: 'Editor',
+      //   });
+      // }
 
-    // menu.push({
-    //   text: 'Panel JSON',
-    //   click: 'ctrl.editPanelJson(); dismiss();',
-    // });
+      // menu.push({
+      //   text: 'Panel JSON',
+      //   click: 'ctrl.editPanelJson(); dismiss();',
+      // });
+      menu.push({
+        text: '重复',
+        click: 'ctrl.duplicate()',
+        role: 'Editor',
+        shortcut: 'p d',
+      });
+
+      menu.push({
+        text: '复制',
+        click: 'ctrl.copyPanel()',
+        role: 'Editor',
+      });
+    }
+
     menu.push({
-      text: '重复',
-      click: 'ctrl.duplicate()',
-      role: 'Editor',
-      shortcut: 'p d',
+      text: '面板JSON',
+      click: 'ctrl.editPanelJson(); dismiss();',
     });
-
-    menu.push({
-      text: '复制',
-      click: 'ctrl.copyPanel()',
-      role: 'Editor',
-    });
-  }
-
-  menu.push({
-    text: '面板JSON',
-    click: 'ctrl.editPanelJson(); dismiss();',
-  });
 
     this.events.emit('init-panel-actions', menu);
     return menu;
@@ -284,7 +285,6 @@ export class PanelCtrl {
   sharePanel() {
     sharePanelUtil(this.dashboard, this.panel);
   }
-
   getInfoMode() {
     if (this.error) {
       return 'error';
@@ -297,7 +297,11 @@ export class PanelCtrl {
     }
     return '';
   }
-
+  // onColorChange() {
+  //   return (newColor: string) => {
+  //    console.log(newColor);
+  //   };
+  // }
   getInfoContent(options: { mode: string }) {
     const { panel } = this;
     let markdown = panel.description || '';
