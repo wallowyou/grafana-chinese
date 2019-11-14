@@ -270,7 +270,8 @@ export class DashboardPage extends PureComponent<Props, State> {
       'dashboard-container--has-submenu': dashboard.meta.submenuEnabled,
     });
     const dashStyle = {
-      background: dashboard.background,
+      background: 'url(' + dashboard.background + ') no-repeat',
+      backgroundSize: 'cover',
     };
 
     // Only trigger render when the scroll has moved by 25

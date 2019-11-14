@@ -12,8 +12,10 @@ export class GeneralTabCtrl {
   /** @ngInject */
   constructor($scope: any) {
     this.panelCtrl = $scope.ctrl;
+    // this.onColorChange = this.onColorChange.bind(this);
     const updatePanel = () => {
       console.log('panel.render()');
+      // console.log(this);
       this.panelCtrl.panel.render();
     };
     const generateValueFromPanel = (scope: any) => {
@@ -37,14 +39,11 @@ export class GeneralTabCtrl {
       return panelPropsString + panelLinksString;
     };
     $scope.$watch(generateValueFromPanel, updatePanel, true);
-    console.log(this.onColorChange);
-    this.onColorChange = this.onColorChange.bind(this);
   }
-  onColorChange() {
-    return (newColor: string) => {
-      console.log(newColor);
-    };
-  }
+  // onColorChange(newColor: string) {
+  //   console.log(newColor);
+  //   this.panelCtrl.panel.borderColor = newColor;
+  // }
 }
 
 /** @ngInject */

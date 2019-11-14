@@ -38,12 +38,16 @@
         <input type="text" class="gf-form-input width-25" ng-model='ctrl.panel.borderWidth' ng-model-onblur></input>
       </div>
       <div class="gf-form">
-        <span class="gf-form-label width-7">
+        <span class="gf-form-label width-12">
               面板边框颜色
+              <info-popover mode="right-normal">
+                支持16进制颜色值#ffffff ，rgba(0,0,0,1) rgb(0,0,0)
+              </info-popover>
         </span>
-        <span class="gf-form-label">
-            <color-picker color="ctrl.panel.borderColor" onChange="ctrl.onColorChange(color)"></color-picker>
-          </span>
+        <input type="text" class="gf-form-input width-20" ng-model='ctrl.panel.borderColor' ng-model-onblur></input>
+        <!-- <span class="gf-form-label">
+            <color-picker color="ctrl.panel.borderColor" onChange="ctrl.onColorChange"></color-picker>
+          </span> -->
       </div>
       <div class="gf-form">
         <span class="gf-form-label width-7">

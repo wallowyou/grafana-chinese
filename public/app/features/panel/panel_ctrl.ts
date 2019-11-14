@@ -297,10 +297,9 @@ export class PanelCtrl {
     }
     return '';
   }
-  // onColorChange() {
-  //   return (newColor: string) => {
-  //    console.log(newColor);
-  //   };
+  // onColorChange(newColor: string) {
+  //   console.log(newColor);
+  //   this.panel.borderColor = newColor;
   // }
   getInfoContent(options: { mode: string }) {
     const { panel } = this;
