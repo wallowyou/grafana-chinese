@@ -83,6 +83,7 @@ export class DashboardModel {
     this.description = data.description;
     this.tags = data.tags || [];
     this.style = data.style || 'dark';
+    this.background = data.background || '';
     this.timezone = data.timezone || '';
     this.editable = data.editable !== false;
     this.graphTooltip = data.graphTooltip || 0;
